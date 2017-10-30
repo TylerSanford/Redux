@@ -22,20 +22,19 @@ class App extends Component {
   handleAddTodo() {
     let item = this.state.todoItem;
     const todos = this.state.todos;
-    todos.push({item: item, completed: false});
+    todos.push({ item: item, completed: false });
     this.setState({ todos, todoItem: '' });
   }
 
   render() {
     return (
       <div className="App">
-        <TodoList
+        <TodosList
           changeHandler={this.handleTodoItem}
           addTodo={this.handleAddTodo}
           item={this.todoItem}
           todos={this.state.todos}
         />
-        <TodosList />
         <TodosDetail />
       </div>
     );
