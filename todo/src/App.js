@@ -1,18 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import TodoList from './TodoList';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      todoItem: '',
+      todos: []
+    };
+    this.handleTodoItem = this.handleTodoItem.bind(this);
+    this.handleAddTodo = this.handleAddTodo.bind(this);
+  }
+
+  handleTodoItem(event) {
+    this.setState({ todoItem: event.target.value });
+  }
+
+  handleAddTodo() {
+    let item = this.state.todoItem;
+    const todos = this.state.todos;
+    todos.push(item);
+    this.setState({ todos, todoItem: '' });
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <TodoList
+          changeHandler={this.handleTodoItem}
+          addTodo={this.handleAddTodo}
+          item={this.todoItem}
+          todos={this.state.todos}
+        />
       </div>
     );
   }
