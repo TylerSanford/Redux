@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import TodoList from './TodoList';
+import TodosList from './containers/TodosList';
+import TodosDetail from './containers/TodosDetail';
 import './App.css';
 
 class App extends Component {
@@ -20,7 +22,7 @@ class App extends Component {
   handleAddTodo() {
     let item = this.state.todoItem;
     const todos = this.state.todos;
-    todos.push(item);
+    todos.push({item: item, completed: false});
     this.setState({ todos, todoItem: '' });
   }
 
@@ -33,6 +35,8 @@ class App extends Component {
           item={this.todoItem}
           todos={this.state.todos}
         />
+        <TodosList />
+        <TodosDetail />
       </div>
     );
   }
