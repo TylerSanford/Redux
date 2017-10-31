@@ -4,12 +4,18 @@ import './Todo.css';
 
 const Todo = ({ onClick, completed, text }) => (
   <div class="container">
-    <div class="incomplete" onClick={onClick}>
-      {completed ? 'Done' : 'Not Done'}{' '}
+    <div id="toggle" class="incomplete" onClick={btnChangeClass}>
+      {completed ? 'Done' : 'Not Done'}
     </div>
     <div class="text">{text}</div>
   </div>
 );
+
+function btnChangeClass() {
+  let element = document.getElementById("toggle");
+  element.classList.toggle("completed");
+  
+}
 
 Todo.propTypes = {
   onClick: PropTypes.func.isRequired,

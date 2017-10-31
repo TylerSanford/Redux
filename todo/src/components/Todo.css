@@ -9,7 +9,18 @@
   color: white;
 }
 
-.complete {
+.incomplete:active {
+  border: 1px solid black;
+  width: 100px;
+  height: 20px;
+  margin: 5px;
+  background-color: green;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.completed {
   background-color: green;
 }
 .text {
