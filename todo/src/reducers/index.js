@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
-import TodosReducer from './todos';
-import ActiveTodos from './active-todos';
+import todos from './todos';
 
-const rootReducer = combineReducers({
-  todos: TodosReducer,
-  activeTodos: ActiveTodos,
+const todoApp = combineReducers({
+  todos
 });
 
-export default rootReducer;
+export default todoApp;

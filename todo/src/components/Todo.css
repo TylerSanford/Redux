@@ -1,0 +1,23 @@
+.incomplete {
+  border: 1px solid black;
+  width: 100px;
+  height: 20px;
+  margin: 5px;
+  background-color: red;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.complete {
+  background-color: green;
+}
+.text {
+  color: black;
+  line-height: 30px;
+  margin-left: 20px;
+}
+
+.container {
+  display: flex;
+}
